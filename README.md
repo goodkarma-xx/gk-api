@@ -115,10 +115,10 @@ curl --header "Authentication: Bearer YOUR_API_KEY" \
 ```json
 {
     "user": {
-        "balance": 5, //how much they have left 
-        "contributed": 181, //how much they've contributed in the past
+        "balance": 5, 
+        "contributed": 181,
         "user_id": "test_user", 
-        "wallet": [ //all of the contribution tokens they have received
+        "wallet": [
             {
                 "amount": 5, 
                 "expires_at": 1341289935, 
