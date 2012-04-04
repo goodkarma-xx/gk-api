@@ -13,7 +13,31 @@ Authentication
 
 In order to make an API call you must provide an API key in the authentication header. It should be in the form:
 
-Authentication: Bearer YOUR_API_KEY
+`Authentication: Bearer YOUR_API_KEY
 
-We are currently in beta so if you are interesting in trying this out, feel free to get in touch and we will provide you with a key to use for the time being.
+We are currently in beta so if you are interesting in trying this out, feel free to get in touch [here] (mailto:api@thegoodkarma.co) and we will provide you with a key to use for the time being.
+
+Campaigns
+---------
+
+
+Users
+-----
+
+
+Points
+------
+
+
+Contributions
+-------------
+
+
+IFrame Contributions
+---------------------
+
+
+
+
+
 
