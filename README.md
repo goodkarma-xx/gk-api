@@ -21,7 +21,7 @@ For example, if you wish to see the state of a current user in your system, you 
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" \
-  https://goodkarmaapp.com/api/v1/user/username@yourcompany.com | python -mjson.tool  ```
+  https://goodkarmaapp.com/api/v1/user/username@yourcompany.com | python -mjson.tool```
 
 and would receive
 
