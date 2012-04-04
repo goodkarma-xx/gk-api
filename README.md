@@ -136,21 +136,33 @@ curl --header "Authentication: Bearer YOUR_API_KEY" \
 }
 ```
 
-
-
 Points
 ------
+
+`POST` to `https://goodkarmaapp.com/api/v1/points/reward`
 
 
 Contributions
 -------------
 
+`POST` to `https://goodkarmaapp.com/api/v1/contribution`
 
 IFrame Contributions
 ---------------------
 
+`POST` to `https://goodkarmaapp.com/api/v1/iframe`
 
+```shell
+curl --header "Authentication: Bearer YOUR_API_KEY" --data '{"user_id": "username"}' \
+   https://goodkarmaapp.com/api/v1/iframe | python -mjson.tool
+```
 
+returns
 
+```json
+{
+    "iframe_url": "https://goodkarmaapp.com/api/v1/iframe/0d9ea5046d9d4019b58a12835d682642"
+}
+```
 
 
