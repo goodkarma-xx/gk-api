@@ -49,7 +49,9 @@ Campaigns
 You can create a campaign with a `POST` request to `https://goodkarmaapp.com/api/v1/campaign`
 
 ```shell
-curl --data '{"goal": 1000, "name": "Our first campaign!","description": "We really care about animals","nonprofit_id": 1 }' --header "Authentication: Bearer YOUR_API_KEY" http://50.19.85.144/api/v1/campaign | python -mjson.tool
+curl --data '{"goal": 1000, "name": "Our first campaign!","description": "We really care about animals","nonprofit_id": 1 }' \
+  --header "Authentication: Bearer YOUR_API_KEY" \
+  https://goodkarmaapp.com/api/v1/campaign | python -mjson.tool
 ```
 
 ```json
@@ -71,12 +73,10 @@ curl --data '{"goal": 1000, "name": "Our first campaign!","description": "We rea
     }
 }
 ```
-
-
-View campaigns
+You can view all your campaigns with a `GET` request to `https://goodkarmaapp.com/api/v1/campaign`
 
 ```shell
-curl --header "Authentication: Bearer YOUR_API_KEY" http://50.19.85.144/api/v1/campaign | python -mjson.tool
+curl --header "Authentication: Bearer YOUR_API_KEY" https://goodkarmaapp.com/api/v1/campaign | python -mjson.tool
 ```
 
 ```json
