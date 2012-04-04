@@ -21,9 +21,10 @@ For example, if you wish to see the state of a current user in your system, you 
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" \
-  https://goodkarmaapp.com/api/v1/user/username@yourcompany.com | python -mjson.tool```
+  https://goodkarmaapp.com/api/v1/user/username@yourcompany.com | python -mjson.tool
+```
 
-and would receive
+and would receive something like this back
 
 ```json
 {
@@ -32,20 +33,9 @@ and would receive
         "contributed": 181, 
         "user_id": "username@yourcompany.com", 
         "wallet": [
-            {
-                "amount": 5, 
-                "expires_at": 1341289935, 
-                "fallback_nonprofit": {
-                    "id": 1, 
-                    "name": "Sean Casey Animal Rescue", 
-                    "tagline": "Coming to the aid of unfortunate animals of all kinds", 
-                    "url": "https://goodkarmaapp.com/np/seancasey"
-                }, 
-                "issued_at": 1333513935, 
-                "token": "c8cf5dea04a844b884e5ad339e97dcbc"
-            }
+            ... , ...
         ]
-    }
+    } 
 }
 ```
 
