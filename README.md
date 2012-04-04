@@ -48,13 +48,63 @@ Campaigns
 
 You can create a campaign with a `POST` request to `https://goodkarmaapp.com/api/v1/campaign`
 
+```shell
+curl --data '{"goal": 1000, "name": "Our first campaign!","description": "We really care about animals","nonprofit_id": 1 }' --header "Authentication: Bearer YOUR_API_KEY" http://50.19.85.144/api/v1/campaign | python -mjson.tool
+```
+
+```json
+{
+    "campaign": {
+        "active": true, 
+        "description": "We really care about animals", 
+        "goal": 1000, 
+        "id": 20, 
+        "name": "Our first campaign!", 
+        "nonprofit": {
+            "id": 1, 
+            "name": "Sean Casey Animal Rescue", 
+            "tagline": "Coming to the aid of unfortunate animals of all kinds", 
+            "url": "https://goodkarmaapp.com/np/seancasey"
+        }, 
+        "percent_complete": 0.0, 
+        "raised": 0
+    }
+}
+```
 
 
+View campaigns
 
+```shell
+curl --header "Authentication: Bearer YOUR_API_KEY" http://50.19.85.144/api/v1/campaign | python -mjson.tool
+```
 
+```json
+{
+    "campaigns": [
+        {
+            "active": true, 
+            "description": "We really care about animals", 
+            "goal": 1000, 
+            "id": 1, 
+            "name": "Our first campaign!", 
+            "nonprofit": {
+                "id": 1, 
+                "name": "Sean Casey Animal Rescue", 
+                "tagline": "Coming to the aid of unfortunate animals of all kinds", 
+                "url": "https://goodkarmaapp.com/np/seancasey"
+            }, 
+            "percent_complete": 17.1, 
+            "raised": 171
+        }, 
+	....
+}
+```
 
 Users
 -----
+
+``
 
 
 Points
