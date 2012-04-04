@@ -104,7 +104,38 @@ curl --header "Authentication: Bearer YOUR_API_KEY" https://goodkarmaapp.com/api
 Users
 -----
 
-``
+`GET` request to `https://goodkarmaapp.com/api/v1/user/:username` will return info on the username
+
+```shell
+curl --header "Authentication: Bearer YOUR_API_KEY" \
+  https://goodkarmaapp.com/api/v1/user/test_user
+```
+
+
+```json
+{
+    "user": {
+        "balance": 5, //how much they have left 
+        "contributed": 181, //how much they've contributed in the past
+        "user_id": "test_user", 
+        "wallet": [ //all of the contribution tokens they have received
+            {
+                "amount": 5, 
+                "expires_at": 1341289935, 
+                "fallback_nonprofit": {
+                    "id": 1, 
+                    "name": "Sean Casey Animal Rescue", 
+                    "tagline": "Coming to the aid of unfortunate animals of all kinds", 
+                    "url": "https://goodkarmaapp.com/np/seancasey"
+                }, 
+                "issued_at": 1333513935, 
+                "token": "c8tf5dha04a844b884e5ad339e97dcbc"
+            }
+        ]
+    }
+}
+```
+
 
 
 Points
