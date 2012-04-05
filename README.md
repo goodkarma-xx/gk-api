@@ -262,8 +262,26 @@ Will return something like this:
 
 ```json
 {
-    "iframe_url": "https://goodkarmaapp.com/api/v1/iframe/0d9ea5046d9d4019b58a12835d682642"
+    "iframe_url": "https://goodkarmaapp.com/api/v1/iframe/0d9ea50i46did4019bi8a12845d682642"
 }
 ```
 
+You can customize the background of the iframe by appending a `bg` parameter to the end of the url and the hex value you wish to color it with. Eg. `?bg=ccc` or `?bg=8FC5DF`
 
+We also provide a simple js utility script to allow you to place the the iframe into your site
+
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<script src="https://goodkarmaapp.com/static/js/iframe.goodkarma.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="gkframe"></div>
+		<script type="text/javascript">
+			GoodKarma.nonProfitSelector("gkframe","https://goodkarmaapp.com/api/v1/iframe/0d9ea50i46did4019bi8a12845d682642")
+		</script>
+	</body>
+</html>
+```
