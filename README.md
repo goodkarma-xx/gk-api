@@ -245,13 +245,13 @@ A contribution level IFrame is useful for one off rewards, where as a user_id le
 
 `POST` to `https://goodkarmaapp.com/api/v1/iframe`
 
-*User level authentication
+* User level authentication
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" --data '{"user_id": "username"}' \
    https://goodkarmaapp.com/api/v1/iframe | python -mjson.tool
 ```
-*Contribution level authentication
+* Contribution level authentication
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" --data '{"token": "CONTRIBUTION_TOKEN"}'
