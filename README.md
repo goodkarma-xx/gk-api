@@ -1,7 +1,7 @@
 The brand new Good Karma API
 =============================
 
-We're excited to announce v1 of the [Good Karma API](http://goodkarmaapp.com). With only a few HTTP calls, you can let your customers, users, or visitors to your site give to nonprofits of their choice. It's a simple way to align your brand with the interests of your users as well as having tax deductible benefits.
+We're excited to announce v1 of the [Good Karma API](http://goodkarmaapp.com). With only a few HTTP calls, you can let your customers, users, or visitors to your site give to nonprofits of their choice. It's a simple way to align your brand with the interests of your users -- and it has tax deductible benefits.
 
 If you are interested in trying it out, please contact us [here] (mailto:api@thegoodkarma.co) and we will hook you up with an api key.
 
