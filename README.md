@@ -124,14 +124,14 @@ Would return:
         "wallet": [
             {
                 "amount": 5, 
-                "expires_at": 1341289935, 
+                "expires_at": "2012-07-04T02:33:29", 
                 "fallback_nonprofit": {
                     "id": 1, 
                     "name": "Sean Casey Animal Rescue", 
                     "tagline": "Coming to the aid of unfortunate animals of all kinds", 
                     "url": "https://goodkarmaapp.com/np/seancasey"
                 }, 
-                "issued_at": 1333513935, 
+                "issued_at": "2012-04-05T02:33:29", 
                 "token": "c8tf5dha04a844b884e5ad339e97dcbc"
             }
         ]
@@ -160,14 +160,14 @@ If you have enough points remaining, the call would return
 {
     "points": {
         "amount": 4, 
-        "expires_at": 1341365483, 
+        "expires_at": "2012-07-05T02:33:29", 
         "fallback_nonprofit": {
             "id": 1, 
             "name": "Sean Casey Animal Rescue", 
             "tagline": "Coming to the aid of unfortunate animals of all kinds", 
             "url": "https://goodkarmaapp.com/np/seancasey"
         }, 
-        "issued_at": 1333589483, 
+        "issued_at": "2012-04-05T02:33:29", 
         "token": "a924bef1ci4a43eeh3576bfed77ba3e4"
     }
 }
@@ -226,7 +226,7 @@ Which would return
             "percent_complete": 19.0, 
             "raised": 190
         }, 
-        "made_at": 1333592441, 
+        "made_at": "2012-04-05T02:33:29", 
         "user_id": "d@c.com"
     }
 }
