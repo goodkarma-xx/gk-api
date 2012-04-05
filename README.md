@@ -285,3 +285,7 @@ We also provide a simple js utility script to allow you to place the the iframe 
 	</body>
 </html>
 ```
+So an iframe for a company with 3 active campaigns and a `bg` parameter set to 'ccc' will look like this:
+
+![iframe example](http://dl.dropbox.com/u/6742663/Screen%20Shot%202012-04-04%20at%2010.48.49%20PM.png)
+
