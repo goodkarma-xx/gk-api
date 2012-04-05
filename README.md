@@ -102,6 +102,7 @@ curl --header "Authentication: Bearer YOUR_API_KEY" https://goodkarmaapp.com/api
 	....
 }
 ```
+To view only the active campaigns, append `?active=true` to the url. This might become the default behavior.
 
 Users
 -----
