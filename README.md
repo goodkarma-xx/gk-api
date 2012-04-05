@@ -3,12 +3,14 @@ The brand new Good Karma API
 
 We're excited to announce v1 of the [Good Karma API](http://goodkarmaapp.com). With only a few HTTP calls, you can let your customers, users, or visitors to your site give to nonprofits of their choice. It's a great way to align your brand with the interests of your users.
 
+If you are interested in trying it out, please contact us [here] (mailto:api@thegoodkarma.co) and we will hook you up wuth api key.
+
 Making a request
 -----------------
 
 All URLs start with `https://goodkarmaapp.com/api/v1/`
 
-It is a REST-style API that uses JSON for serialization and header based authentication. At this point all requests require authorization.
+It is a REST-style API that uses JSON for serialization and header based authentication. At this point all requests require authorizationi and all of your api activities are scoped to your organization/api key.
 
 Authentication
 ---------------
@@ -111,6 +113,7 @@ curl --header "Authentication: Bearer YOUR_API_KEY" \
   https://goodkarmaapp.com/api/v1/user/test_user
 ```
 
+Would return:
 
 ```json
 {
@@ -141,23 +144,50 @@ Points
 
 `POST` to `https://goodkarmaapp.com/api/v1/points/reward`
 
+```shell
+curl
+```
+
+Would return 
+
+```json
+```
 
 Contributions
 -------------
 
 `POST` to `https://goodkarmaapp.com/api/v1/contribution`
 
+Would return
+
+```json
+```
+
 IFrame Contributions
 ---------------------
 
+>Not everyone will want to provide their own contribution UI so we also provide an API endpoint to generate an iframe that you can embed into your own site. It provides a simple interface where users can decide which of your campaigns they want to contribute towards.
+
+You can either create an IFrame on the contribution level or on the user level. This means you can authenticate an Iframe for a single contribution (using a contribution token), or for all of the unused points a user has collected (using their user id).
+
+A contribution level IFrame is useful for one off rewards, where as a user_id level IFrame is more useful for a user page or profile.
+
 `POST` to `https://goodkarmaapp.com/api/v1/iframe`
+
+*User level authentication
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" --data '{"user_id": "username"}' \
    https://goodkarmaapp.com/api/v1/iframe | python -mjson.tool
 ```
+*Contribution level authentication
 
-returns
+```shell
+curl --header "Authentication: Bearer YOUR_API_KEY" --data '{"token": "CONTRIBUTION_TOKEN"}'
+  https://goodkarmaapp.com/api/v1/iframe | python -mjson.tool
+```
+
+Will return something like this:
 
 ```json
 {
