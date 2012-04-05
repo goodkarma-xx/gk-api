@@ -1,16 +1,16 @@
 The brand new Good Karma API
 =============================
 
-We're excited to announce v1 of the [Good Karma API](http://goodkarmaapp.com). With only a few HTTP calls, you can let your customers, users, or visitors to your site give to nonprofits of their choice. It's a great way to align your brand with the interests of your users.
+We're excited to announce v1 of the [Good Karma API](http://goodkarmaapp.com). With only a few HTTP calls, you can let your customers, users, or visitors to your site give to nonprofits of their choice. It's a simple way to align your brand with the interests of your users as well as having tax deductible benefits.
 
-If you are interested in trying it out, please contact us [here] (mailto:api@thegoodkarma.co) and we will hook you up wuth api key.
+If you are interested in trying it out, please contact us [here] (mailto:api@thegoodkarma.co) and we will hook you up with an api key.
 
 Making a request
 -----------------
 
 All URLs start with `https://goodkarmaapp.com/api/v1/`
 
-It is a REST-style API that uses JSON for serialization and header based authentication. At this point all requests require authorizationi and all of your api activities are scoped to your organization/api key.
+It is a REST-style API that uses JSON for serialization and header based authentication. At this point all requests require authorization and are scoped to your organization/api key.
 
 Authentication
 ---------------
@@ -106,11 +106,11 @@ curl --header "Authentication: Bearer YOUR_API_KEY" https://goodkarmaapp.com/api
 Users
 -----
 
-`GET` request to `https://goodkarmaapp.com/api/v1/user/:username` will return info on the username
+`GET` request to `https://goodkarmaapp.com/api/v1/user/:user_id` will return info on the username
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" \
-  https://goodkarmaapp.com/api/v1/user/test_user
+  https://goodkarmaapp.com/api/v1/user/test_user_id
 ```
 
 Would return:
@@ -120,7 +120,7 @@ Would return:
     "user": {
         "balance": 5, 
         "contributed": 181,
-        "user_id": "test_user", 
+        "user_id": "test_user_id", 
         "wallet": [
             {
                 "amount": 5, 
@@ -139,24 +139,57 @@ Would return:
 }
 ```
 
+Note: You don't have to worry about creating a user in our system the first time you make a query for a user -- our backend was designed to be transparent to your actual users in that regard.
+
 Points
 ------
+
+>Now for the fun part, awarding users points! As an api user, you can distribute points from your balance to users or visitors.
 
 `POST` to `https://goodkarmaapp.com/api/v1/points/reward`
 
 ```shell
-curl
+curl --header "Authentication: Bearer YOUR_API_KEY" \
+    --data '{"amount": 4, "fallback_nonprofit_id": 1, "user_id": "d@c.com"}' \
+    https://goodkarmaapp.com/api/v1/points/reward | python -mjson.tool
 ```
 
-Would return 
+If you have enough points remaining, the call would return 
 
 ```json
+{
+    "points": {
+        "amount": 4, 
+        "expires_at": 1341365483, 
+        "fallback_nonprofit": {
+            "id": 1, 
+            "name": "Sean Casey Animal Rescue", 
+            "tagline": "Coming to the aid of unfortunate animals of all kinds", 
+            "url": "https://goodkarmaapp.com/np/seancasey"
+        }, 
+        "issued_at": 1333589483, 
+        "token": "a924bef1ci4a43eeh3576bfed77ba3e4"
+    }
+}
+```
+
+
+If you do not have enough points in your account you will receive an error like this:
+
+```json
+{
+    "error": "Insufficient funds. You tried to reward 4 but you have a balance of 0"
+}
 ```
 
 Contributions
 -------------
 
 `POST` to `https://goodkarmaapp.com/api/v1/contribution`
+
+```shell
+curl
+```
 
 Would return
 
