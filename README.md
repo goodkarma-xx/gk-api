@@ -182,19 +182,57 @@ If you do not have enough points in your account you will receive an error like 
 }
 ```
 
+Although we included a `user_id` value in this call, you do not have to associate points with a specific user. For example, if you want to reward a visitor to your site, you can just make this call, and then redeem the points using the `token` field.
+
 Contributions
 -------------
 
 `POST` to `https://goodkarmaapp.com/api/v1/contribution`
 
+You can redeem all of a user's points like so:
+
 ```shell
-curl
+curl --header "Authentication: Bearer YOUR_API_KEY" \
+  --data '{"user_id": "d@c.com", "campaign_id": 1, "tokens": "all"}' \
+  https://goodkarmaapp.com/api/v1/contribution
 ```
 
-Would return
+or you can redeem specific tokens 
+
+```shell
+curl --header "Authentication: Bearer YOUR_API_KEY" \
+    -data '{"user_id": "d@c.com", "tokens": ["23f23r23r23r","3423fw2f24"]}' \
+    https://goodkarmaapp.com/api/v1/contribution
+```
+
+Which would return
 
 ```json
+{
+    "contribution": {
+        "amount": 4, 
+        "campaign": {
+            "active": true, 
+            "description": "We really care about animals", 
+            "goal": 1000, 
+            "id": 1, 
+            "name": "Barkbox 1", 
+            "nonprofit": {
+                "id": 1, 
+                "name": "Sean Casey Animal Rescue", 
+                "tagline": "Coming to the aid of unfortunate animals of all kinds", 
+                "url": "https://goodkarmaapp.com/np/seancasey"
+            }, 
+            "percent_complete": 19.0, 
+            "raised": 190
+        }, 
+        "made_at": 1333592441, 
+        "user_id": "d@c.com"
+    }
+}
 ```
+
+The `user_id` is not compulsory in this example if the `token` you are using was not rewarded to a `user_id` in the first place.
 
 IFrame Contributions
 ---------------------
