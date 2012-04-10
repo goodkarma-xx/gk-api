@@ -194,15 +194,15 @@ You can redeem all of a user's points like so:
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" \
-  --data '{"user_id": "d@c.com", "campaign_id": 1, "tokens": "all"}' \
+  --data '{"user_id": "d@c.com", "campaign_id": 1 }' \
   https://goodkarmaapp.com/api/v1/contribution
 ```
 
-or you can redeem specific tokens 
+or you can redeem a specific token for an anonymous user 
 
 ```shell
 curl --header "Authentication: Bearer YOUR_API_KEY" \
-    -data '{"user_id": "d@c.com", "tokens": ["23f23r23r23r","3423fw2f24"]}' \
+    -data '{"token": "23f23r23r23r", "campaign_id": 1}' \
     https://goodkarmaapp.com/api/v1/contribution
 ```
 
